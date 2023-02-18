@@ -19,7 +19,7 @@ def index(request):
 @api_view(['GET'])
 def ApiOverview(request):
     api_urls = {
-        'all_items': '/',
+        'All items': '/all',
         'Search by Category': '/?category=category_name',
         'Search by Subcategory': '/?subcategory=category_name',
         'Add': '/create',
