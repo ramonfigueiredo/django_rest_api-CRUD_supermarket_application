@@ -1,2 +1,3 @@
-# django_rest_api-CRUD_supermarket_application
-Django REST API - CRUD - supermarket application
+# Django REST API - CRUD - supermarket application
+
+This is a simple REST APIs for supermarket application. This store contains a variety of food, beverages, and household products, organized into various categories. These categories have subcategories and subcategories have items under them. Each item has a price for which it can be sold. This API is able to add, update, view, and delete such records from a database using the Django REST Framework APIs.
