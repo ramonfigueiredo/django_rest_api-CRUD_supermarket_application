@@ -9,7 +9,8 @@ from api.serializers import ItemSerializer
 
 def index(request):
     return HttpResponse("<h1>Django REST API: Supermarket application CRUD</h1>"
-                        "<p><a href='http://127.0.0.1:8000/api'>API</a><p>"
+                        "<p><a href='http://127.0.0.1:8000/admin'>Admin page</a></p>"
+                        "<p><a href='http://127.0.0.1:8000/api'>API</a></p>"
                         "<ol>"
                         "<li><a href='http://127.0.0.1:8000/api/create'>Create Item</a></li>"
                         "</ol>")
