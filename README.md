@@ -24,6 +24,8 @@ This is a simple REST APIs for supermarket application. This store contains a va
 
 Just run the following command ```docker compose up``` and the api will be availabe in the endpoint ```http://localhost:8000/todo```
 
+Go back to [Contents](#contents).
+
 ### Build and run
 
 ```
@@ -38,6 +40,8 @@ docker compose run api python manage.py migrate
 docker compose build
 docker compose up
 ```
+
+Go back to [Contents](#contents).
 
 ### Testing the API running on the Docker container
 
@@ -65,6 +69,8 @@ Go back to [Contents](#contents).
 ### Install Docker on Ubuntu
 
 Follow the instructions available on: https://docs.docker.com/engine/install/ubuntu/
+
+Go back to [Contents](#contents).
 
 ### Build the Docker project
 
@@ -94,6 +100,8 @@ docker build -f Dockerfile_python3 -t django_api_supermarket_application .
  => => writing image sha256:...                                                                                                                              0.0s
  => => naming to docker.io/library/django_api_supermarket_application     
 ```
+
+Go back to [Contents](#contents).
 
 ### To run the Docker container
 
@@ -137,11 +145,15 @@ Go back to [Contents](#contents).
 python3 -m venv venv
 ```
 
+Go back to [Contents](#contents).
+
 2) Activate python virtual environment
 
 ```
 source venv/bin/activate
 ```
+
+Go back to [Contents](#contents).
 
 3) Install python dependencies
 
@@ -151,10 +163,14 @@ source venv/bin/activate
 python3 -m pip install --upgrade pip
 ```
 
+Go back to [Contents](#contents).
+
 * Install python dependencies 
 ```
 pip install -r requirements.txt
 ```
+
+Go back to [Contents](#contents).
 
 4) Run Django migrations
 
@@ -162,11 +178,15 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
+Go back to [Contents](#contents).
+
 5) Create a Django super user to access the database table using the ```/admin``` URL.
 
 ```
 python manage.py createsuperuser
 ```
+
+Go back to [Contents](#contents).
 
 * Create the admin user (username, email and password)
 
@@ -179,6 +199,8 @@ Password (again): <PASSWORD HERE>
 
 **Note:** To access the ```/admin``` page run the system (```python manage.py runserver```) and open ```http://127.0.0.1:8000/admin```
 
+Go back to [Contents](#contents).
+
 ## Running the API
 
 1) Run the Django system (API)
@@ -186,9 +208,14 @@ Password (again): <PASSWORD HERE>
 ```
 python manage.py runserver
 ```
+
+Go back to [Contents](#contents).
+
 2) Open the ```index``` page: 
 
 * Index page: http://127.0.0.1:8000/
+
+Go back to [Contents](#contents).
 
 3) Open the API
 
@@ -255,6 +282,8 @@ Go back to [Contents](#contents).
 curl -X DELETE http://localhost:8000/api/delete/1
 ```
 
+Go back to [Contents](#contents).
+
 ## Docker commands
 
 ### See Docker images
@@ -270,11 +299,15 @@ REPOSITORY       TAG       IMAGE ID       CREATED              SIZE
 django_project   latest    <>   About a minute ago   167MB
 ```
 
+Go back to [Contents](#contents).
+
 ### See Docker container status
 
 ```
 docker ps
 ```
+
+Go back to [Contents](#contents).
 
 ### Stop Docker container
 
@@ -283,12 +316,16 @@ docker ps
 docker stop <CONTAINER ID>
 ```
 
+Go back to [Contents](#contents).
+
 ### Remove Docker image
 
 ```
 docker images
 docker image rm <IMAGE ID> --force
 ```
+
+Go back to [Contents](#contents).
 
 
 ### Open Docker container bash
@@ -312,11 +349,15 @@ root@...:/app# pwd
 root@...:/app# exit
 ```
 
+Go back to [Contents](#contents).
+
 ### List all Docker containers
 
 ```
 docker container ls -a
 ```
+
+Go back to [Contents](#contents).
 
 ### Delete Docker container using CONTAINER ID
 
