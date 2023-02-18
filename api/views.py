@@ -32,7 +32,7 @@ def ApiOverview(request):
 
 
 @api_view(['POST'])
-def add_items(request):
+def add_item(request):
     item = ItemSerializer(data=request.data)
 
     # validating for already existing data
@@ -63,7 +63,7 @@ def view_items(request):
 
 
 @api_view(['PUT'])
-def update_items(request, pk):
+def update_item(request, pk):
     item = Item.objects.get(pk=pk)
     data = ItemSerializer(instance=item, data=request.data)
 
