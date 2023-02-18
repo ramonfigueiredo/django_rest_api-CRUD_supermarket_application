@@ -14,6 +14,7 @@ def index(request):
                         "<ol>"
                         "<li><a href='http://127.0.0.1:8000/api/create'>Create item</a></li>"
                         "<li><a href='http://127.0.0.1:8000/api/all'>View items</a></li>"
+                        "<li>Update item: PUT http://127.0.0.1:8000/api/update/<pk></li>"
                         "</ol>")
 
 @api_view(['GET'])
@@ -57,5 +58,17 @@ def view_items(request):
     if items:
         serializer = ItemSerializer(items, many=True)
         return Response(serializer.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['PUT'])
+def update_items(request, pk):
+    item = Item.objects.get(pk=pk)
+    data = ItemSerializer(instance=item, data=request.data)
+
+    if data.is_valid():
+        data.save()
+        return Response(data.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
