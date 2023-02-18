@@ -16,6 +16,7 @@ This is a simple REST APIs for supermarket application. This store contains a va
    - [Open Docker container bash](#open-docker-container-bash)
    - [List all Docker containers](#list-all-docker-containers)
    - [Delete Docker container using CONTAINER ID](#delete-docker-container-using-container-id)
+   - [Delete all Docker containers](#delete-all-docker-containers)
 
 
 
@@ -321,6 +322,14 @@ docker container ls -a
 
 ```
 docker rm <CONTAINER-ID>
+```
+
+Go back to [Contents](#contents).
+
+### Delete all Docker containers
+
+```
+docker rm $(docker ps -aq)
 ```
 
 Go back to [Contents](#contents).
