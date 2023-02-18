@@ -13,21 +13,34 @@ def index(request):
                         "<p><a href='http://127.0.0.1:8000/admin'>Admin page</a></p>"
                         "<p><a href='http://127.0.0.1:8000/api'>API</a></p>"
                         "<ol>"
-                        "<li><a href='http://127.0.0.1:8000/api/create'>Create item</a></li>"
-                        "<li><a href='http://127.0.0.1:8000/api/all'>View items</a></li>"
-                        "<li>Update item: PUT http://127.0.0.1:8000/api/update/<pk></li>"
-                        "<li>Delete item: DELETE http://127.0.0.1:8000/api/delete/<pk></li>"
+                            "<li><a href='http://127.0.0.1:8000/api/create/'>Create item</a></li>"
+                            "<li><a href='http://127.0.0.1:8000/api/all/'>View items</a></li>"
+                            "<li>Search items</li>"
+                            "<ul>"
+                                "<li>Search by item name: GET http://127.0.0.1:8000/api/all/?name=item_name"
+                                "<li>Search by category: GET http://127.0.0.1:8000/api/all/?category=category_name"
+                                "<li>Search by subcategory: GET http://127.0.0.1:8000/api/all/?subcategory=category_name"
+                            "</ul>"
+                            "<li>Update item</li>"
+                            "<ul>"
+                                "<li>PUT http://127.0.0.1:8000/api/update/pk/</li>"
+                            "</ul>"
+                            "<li>Delete item:</li>"
+                            "<ul>"
+                                "<li>DELETE http://127.0.0.1:8000/api/delete/pk/</li>"
+                            "</ul>"
                         "</ol>")
 
 @api_view(['GET'])
 def ApiOverview(request):
     api_urls = {
         'All items': '/all',
-        'Search by Category': '/?category=category_name',
-        'Search by Subcategory': '/?subcategory=category_name',
-        'Add': '/create',
-        'Update': '/update/pk',
-        'Delete': '/item/pk/delete'
+        'Search by item name': '/?name=item_name',
+        'Search by category': '/?category=category_name',
+        'Search by subcategory': '/?subcategory=category_name',
+        'Add': '/create/',
+        'Update': '/update/pk/',
+        'Delete': '/delete/pk/'
     }
 
     return Response(api_urls)
