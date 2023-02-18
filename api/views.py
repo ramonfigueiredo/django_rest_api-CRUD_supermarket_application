@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -15,6 +16,7 @@ def index(request):
                         "<li><a href='http://127.0.0.1:8000/api/create'>Create item</a></li>"
                         "<li><a href='http://127.0.0.1:8000/api/all'>View items</a></li>"
                         "<li>Update item: PUT http://127.0.0.1:8000/api/update/<pk></li>"
+                        "<li>Delete item: DELETE http://127.0.0.1:8000/api/delete/<pk></li>"
                         "</ol>")
 
 @api_view(['GET'])
@@ -72,3 +74,10 @@ def update_item(request, pk):
         return Response(data.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['DELETE'])
+def delete_item(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    item.delete()
+    return Response(status=status.HTTP_202_ACCEPTED)
